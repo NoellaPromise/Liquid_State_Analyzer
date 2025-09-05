@@ -1,0 +1,320 @@
+/* Liquid State Analyzer - Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.2em;
+}
+
+/* Flask container at the top */
+.flask-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180px;
+    margin: 20px 0 30px 0;
+    background: #f8f9ff;
+    border-radius: 15px;
+    border: 2px solid #e0e6ff;
+}
+
+.flask {
+    width: 100px;
+    height: 140px;
+    position: relative;
+}
+
+/* Flask neck */
+.flask-neck {
+    width: 25px;
+    height: 50px;
+    background: #f5f5f5;
+    border: 3px solid #333;
+    border-bottom: none;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Flask top rim */
+.flask-top {
+    width: 35px;
+    height: 6px;
+    background: #333;
+    border-radius: 3px;
+    position: absolute;
+    top: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Flask base shape */
+.flask-base {
+    width: 70px;
+    height: 90px;
+    background: #f5f5f5;
+    border: 3px solid #333;
+    border-radius: 0 0 35px 35px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Liquid inside flask */
+.liquid {
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 64px;
+    height: 50px;
+    border-radius: 0 0 32px 32px;
+    transition: all 0.3s ease;
+}
+
+/* STILL STATE - Default blue liquid, no animation */
+.liquid.still {
+    background: #4a90e2;
+}
+
+/* FROZEN STATE - Light blue with crystal pattern */
+.liquid.frozen {
+    background: linear-gradient(45deg, #b3d9ff 25%, #87ceeb 25%, #87ceeb 50%, #b3d9ff 50%, #b3d9ff 75%, #87ceeb 75%);
+    background-size: 8px 8px;
+}
+
+/* BOILING STATE - Red/orange with bubbles */
+.liquid.boiling {
+    background: #ff6b6b;
+    animation: boiling-effect 0.6s ease-in-out infinite;
+}
+
+/* Bubbles for boiling state */
+.bubble {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.liquid.boiling .bubble {
+    animation: bubble-rise 1.2s ease-in-out infinite;
+}
+
+.bubble:nth-child(1) {
+    width: 6px;
+    height: 6px;
+    left: 15%;
+    bottom: 10px;
+    animation-delay: 0s;
+}
+
+.bubble:nth-child(2) {
+    width: 8px;
+    height: 8px;
+    left: 45%;
+    bottom: 8px;
+    animation-delay: 0.4s;
+}
+
+.bubble:nth-child(3) {
+    width: 5px;
+    height: 5px;
+    left: 75%;
+    bottom: 12px;
+    animation-delay: 0.8s;
+}
+
+.bubble:nth-child(4) {
+    width: 7px;
+    height: 7px;
+    left: 30%;
+    bottom: 6px;
+    animation-delay: 0.2s;
+}
+
+.bubble:nth-child(5) {
+    width: 9px;
+    height: 9px;
+    left: 60%;
+    bottom: 5px;
+    animation-delay: 0.6s;
+}
+
+/* State indicator */
+.state-indicator {
+    text-align: center;
+    margin: 10px 0 20px 0;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.state-indicator.still {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.state-indicator.frozen {
+    background: #f3e5f5;
+    color: #7b1fa2;
+}
+
+.state-indicator.boiling {
+    background: #ffebee;
+    color: #d32f2f;
+}
+
+/* Form styling */
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.analyze-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin: 20px 0;
+}
+
+.analyze-btn:hover {
+    transform: translateY(-2px);
+}
+
+.result-section {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #f8f9ff;
+    border: 1px solid #e0e6ff;
+    text-align: center;
+}
+
+/* Demo controls for showing different states */
+.demo-controls {
+    text-align: center;
+    margin: 20px 0;
+    padding: 15px;
+    background: #f0f8ff;
+    border-radius: 10px;
+    border: 1px solid #b3d9ff;
+}
+
+.demo-controls p {
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 14px;
+}
+
+.demo-btn {
+    margin: 5px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.demo-btn.still-btn {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.demo-btn.frozen-btn {
+    background: #f3e5f5;
+    color: #7b1fa2;
+}
+
+.demo-btn.boiling-btn {
+    background: #ffebee;
+    color: #d32f2f;
+}
+
+.demo-btn:hover {
+    transform: translateY(-1px);
+}
+
+/* Animations */
+@keyframes boiling-effect {
+    0% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.02); }
+    100% { transform: translateX(-50%) scale(1); }
+}
+
+@keyframes bubble-rise {
+    0% {
+        bottom: 10px;
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    20% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        bottom: 40px;
+        opacity: 0;
+        transform: scale(0.3);
+    }
+}

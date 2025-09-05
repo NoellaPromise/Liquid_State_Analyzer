@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liquid State Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Liquid State Analyzer</h1>
+        
+        <!-- Flask visualization at the top -->
+        <div class="flask-container">
+            <div class="flask">
+                <div class="flask-neck"></div>
+                <div class="flask-top"></div>
+                <div class="flask-base"></div>
+                <div class="liquid still" id="liquid-display">
+                    <div class="bubble"></div>
+                    <div class="bubble"></div>
+                    <div class="bubble"></div>
+                    <div class="bubble"></div>
+                    <div class="bubble"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- State indicator -->
+        <div class="state-indicator still" id="state-indicator">
+            LIQUID STATE - Still
+        </div>
+
+        <!-- Demo controls to show different states -->
+        <div class="demo-controls">
+            <p><strong>Preview States:</strong></p>
+            <button class="demo-btn still-btn" onclick="changeState('still')">Still (Normal)</button>
+            <button class="demo-btn frozen-btn" onclick="changeState('frozen')">Frozen (Solid)</button>
+            <button class="demo-btn boiling-btn" onclick="changeState('boiling')">Boiling (Gas)</button>
+        </div>
+
+        <!-- Input form -->
+        <form id="analysis-form" action="/analyze" method="POST">
+            <div class="input-group">
+                <label for="temperature">Temperature (°C):</label>
+                <input type="number" id="temperature" name="temperature" step="0.1" placeholder="Enter temperature" required>
+            </div>
+
+            <div class="input-group">
+                <label for="pressure">Atmospheric Pressure (atm):</label>
+                <input type="number" id="pressure" name="pressure" step="0.01" value="1.0" placeholder="Enter pressure" required>
+            </div>
+
+            <div class="input-group">
+                <label for="liquid">Select Liquid:</label>
+                <select id="liquid" name="liquid" required>
+                    <option value="">Choose a liquid...</option>
+                    <option value="water">Water (H₂O)</option>
+                    <option value="ethanol">Ethanol (C₂H₅OH)</option>
+                    <option value="mercury">Mercury (Hg)</option>
+                    <option value="nitrogen">Liquid Nitrogen (N₂)</option>
+                    <option value="oxygen">Liquid Oxygen (O₂)</option>
+                    <option value="benzene">Benzene (C₆H₆)</option>
+                    <option value="acetone">Acetone (C₃H₆O)</option>
+                </select>
+            </div>
+
+            <button type="submit" class="analyze-btn">Analyze Liquid State</button>
+        </form>
+
+
+    <script>
+        // Demo function to show different states (for preview only)
+        function changeState(state) {
+            const liquid = document.getElementById('liquid-display');
+            const indicator = document.getElementById('state-indicator');
+            
+            // Remove all existing classes
+            liquid.classList.remove('still', 'frozen', 'boiling');
+            indicator.classList.remove('still', 'frozen', 'boiling');
+            
+            // Add new state class
+            liquid.classList.add(state);
+            indicator.classList.add(state);
+            
+            // Update indicator text
+            if (state === 'still') {
+                indicator.textContent = 'LIQUID STATE - Still';
+            } else if (state === 'frozen') {
+                indicator.textContent = 'SOLID STATE - Frozen';
+            } else if (state === 'boiling') {
+                indicator.textContent = 'GAS STATE - Boiling';
+            }
+        }
+
+        // Note: In the actual implementation, students will remove this demo script
+        // and handle state changes through their Python backend responses
+    </script>
+</body>
+</html>
