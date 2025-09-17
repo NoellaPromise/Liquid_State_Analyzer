@@ -1,0 +1,27 @@
+{
+  "water": {
+    "name": "Water (H₂O)",
+    "freezing_point": 0.0,
+    "boiling_point": 100.0
+  },
+  "ethanol": {
+    "name": "Ethanol (C₂H₅OH)",
+    "freezing_point": -114.1,
+    "boiling_point": 78.4
+  },
+  "mercury": {
+    "name": "Mercury (Hg)",
+    "freezing_point": -38.8,
+    "boiling_point": 356.7
+  },
+  "nitrogen": {
+    "name": "Nitrogen (N₂)",
+    "freezing_point": -210.0,
+    "boiling_point": -195.8
+  },
+  "oxygen": {
+    "name": "Oxygen (O₂)",
+    "freezing_point": -218.8,
+    "boiling_point": -183.0
+  }
+}
