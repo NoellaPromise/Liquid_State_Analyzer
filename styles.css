@@ -1,232 +1,235 @@
-        /* Make the page look nice */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
-            margin: 0;
-            padding: 20px;
-        }
 
-        /* Main container for everything */
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+      /* Simple styles for Grade 8 students */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f8ff;
+        margin: 0;
+        padding: 20px;
+      }
 
-        /* Title styling */
-        h1 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 30px;
-        }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
 
-        /* Form input groups */
-        .form-group {
-            margin-bottom: 20px;
-        }
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 30px;
+      }
 
-        /* Labels for inputs */
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #555;
-        }
+      .form-group {
+        margin-bottom: 20px;
+      }
 
-        /* Input fields and dropdown */
-        input, select {
-            width: 100%;
-            padding: 10px;
-            border: 2px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-            box-sizing: border-box;
-        }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #555;
+      }
 
-        /* Change border color when focused */
-        input:focus, select:focus {
-            border-color: #4CAF50;
-            outline: none;
-        }
+      input,
+      select {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+        box-sizing: border-box;
+      }
 
-        /* Main analyze button */
-        .analyze-button {
-            width: 100%;
-            padding: 15px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
+      input:focus,
+      select:focus {
+        border-color: #4caf50;
+        outline: none;
+      }
 
-        /* Button hover effect */
-        .analyze-button:hover {
-            background-color: #45a049;
-        }
+      .analyze-button {
+        width: 100%;
+        padding: 15px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
 
-        /* Container for the flask */
-        .flask-container {
-            text-align: center;
-            margin: 30px 0;
-            padding: 20px;
-        }
+      .analyze-button:hover {
+        background-color: #45a049;
+      }
 
-        /* The main flask body */
-        .flask {
-            width: 120px;
-            height: 180px;
-            margin: 0 auto;
-            position: relative;
-            background-color: #f9f9f9;
-            border: 3px solid #333;
-            border-radius: 0 0 60px 60px;
-        }
+      /* Flask container styles */
+      /* .flask-container {
+        text-align: center;
+        margin: 30px 0;
+        padding: 20px;
+      } */
 
-        /* Flask neck (thin part) */
-        .flask-neck {
-            width: 30px;
-            height: 40px;
-            background-color: #f9f9f9;
-            border: 3px solid #333;
-            border-bottom: none;
-            margin: 0 auto;
-            position: relative;
-            top: -3px;
-        }
+      .flask {
+        width: 80px;
+        height: 100px;
+        margin: 0 auto;
+        position: relative;
+        background-color: #f9f9f9;
+        border: 3px solid #333;
+        border-radius: 0 0 60px 60px;
+      }
 
-        /* Flask top opening */
-        .flask-top {
-            width: 50px;
-            height: 15px;
-            background-color: #f9f9f9;
-            border: 3px solid #333;
-            border-bottom: none;
-            margin: 0 auto;
-            border-radius: 5px 5px 0 0;
-            position: relative;
-            top: -3px;
-        }
+      .flask-neck {
+        width: 30px;
+        height: 40px;
+        background-color: #f9f9f9;
+        border: 3px solid #333;
+        border-bottom: none;
+        margin: 0 auto;
+        position: relative;
+        top: -3px;
+      }
 
-        /* Liquid in still (normal) state */
-        .liquid-still {
-            width: 100px;
-            height: 80px;
-            background-color: #87CEEB;
-            position: absolute;
-            bottom: 10px;
-            left: 7px;
-            border-radius: 0 0 50px 50px;
-        }
+      .flask-top {
+        width: 50px;
+        height: 15px;
+        background-color: #f9f9f9;
+        border: 3px solid #333;
+        border-bottom: none;
+        margin: 0 auto;
+        border-radius: 5px 5px 0 0;
+        position: relative;
+        top: -3px;
+      }
 
-        /* Liquid in frozen (solid) state */
-        .liquid-frozen {
-            width: 100px;
-            height: 80px;
-            background-color: #B0E0E6;
-            position: absolute;
-            bottom: 10px;
-            left: 7px;
-            border-radius: 0 0 50px 50px;
-            border: 2px solid #4682B4;
-        }
+      /* Different liquid states */
+      .liquid-still {
+        width: 70px;
+        height: 50px;
+        background-color: #87ceeb;
+        position: absolute;
+        bottom: 10px;
+        left: 7px;
+        border-radius: 0 0 50px 50px;
+      }
 
-        /* Add snowflake to frozen liquid */
-        .liquid-frozen::before {
-            content: "❄️";
-            position: absolute;
-            top: 20px;
-            left: 35px;
-            font-size: 30px;
-        }
+      .liquid-frozen {
+        width: 65px;
+        height: 60px;
+        background-color: #b0e0e6;
+        position: absolute;
+        bottom: 10px;
+        left: 7px;
+        border-radius: 0 0 50px 50px;
+        border: 2px solid #4682b4;
+      }
 
-        /* Liquid in boiling (gas) state */
-        .liquid-boiling {
-            width: 100px;
-            height: 80px;
-            background-color: #FF6347;
-            position: absolute;
-            bottom: 10px;
-            left: 7px;
-            border-radius: 0 0 50px 50px;
-            animation: bubble 1s infinite;
-        }
+      .liquid-frozen::before {
+        content: "❄️";
+        position: absolute;
+        top: 20px;
+        left: 15px;
+        font-size: 30px;
+      }
 
-        /* Add steam to boiling liquid */
-        .liquid-boiling::before {
-            content: "💨";
-            position: absolute;
-            top: -30px;
-            left: 35px;
-            font-size: 25px;
-            animation: steam 2s infinite;
-        }
+      .liquid-boiling {
+        width: 65px;
+        height: 50px;
+        background-color: #ff6347;
+        position: absolute;
+        bottom: 10px;
+        left: 7px;
+        border-radius: 0 0 50px 50px;
+        animation: bubble 1s infinite;
+      }
 
-        /* Animation for bubbling effect */
-        @keyframes bubble {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
+      .liquid-boiling::before {
+        content: "💨";
+        position: absolute;
+        top: -30px;
+        left: 35px;
+        font-size: 25px;
+        animation: steam 2s infinite;
+      }
 
-        /* Animation for steam rising */
-        @keyframes steam {
-            0% { opacity: 1; transform: translateY(0); }
-            100% { opacity: 0; transform: translateY(-20px); }
+      @keyframes bubble {
+        0%,
+        100% {
+          transform: scale(1);
         }
-
-        /* Results display area */
-        .results {
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-            display: none;
+        50% {
+          transform: scale(1.05);
         }
+      }
 
-        /* Show results when ready */
-        .results.show {
-            display: block;
+      @keyframes steam {
+        0% {
+          opacity: 1;
+          transform: translateY(0);
         }
-
-        /* State title styling */
-        .state-title {
-            font-size: 24px;
-            font-weight: bold;
-            text-align: center;
-            margin: 15px 0;
+        100% {
+          opacity: 0;
+          transform: translateY(-20px);
         }
+      }
 
-        /* Different colors for different states */
-        .solid-state { color: #4682B4; }
-        .liquid-state { color: #2E8B57; }
-        .gas-state { color: #FF6347; }
+      .results {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 60px;
+        display: none;
+        flex-direction: row;
+        place-content: center;
+        gap: 70px;
+      }
 
-        /* Information text */
-        .result-info {
-            text-align: center;
-            margin: 10px 0;
-            font-size: 16px;
-        }
+      .results.show {
+        display: inline-flex;
+      }
 
-        /* Error message styling */
-        .error {
-            background-color: #ffebee;
-            color: #d32f2f;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 15px 0;
-            display: none;
-        }
+      .state-title {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        margin: 15px 0;
+      }
 
-        /* Loading message */
-        .loading {
-            text-align: center;
-            color: #666;
-            padding: 20px;
-            display: none;
-        }
+      .solid-state {
+        color: #4682b4;
+      }
+      .liquid-state {
+        color: #2e8b57;
+      }
+      .gas-state {
+        color: #ff6347;
+      }
+
+      .result-info {
+        text-align: center;
+        margin: 10px 0;
+        font-size: 16px;
+      }
+
+      .error {
+        background-color: #ffebee;
+        color: #d32f2f;
+        padding: 15px;
+        border-radius: 5px;
+        margin: 15px 0;
+        display: none;
+      }
+
+      .instructions {
+        background-color: #e8f5e8;
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        border-left: 4px solid #4caf50;
+      }
+  

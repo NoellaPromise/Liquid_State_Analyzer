@@ -1,0 +1,18 @@
+
+        <script>
+        // Auto-update the web interface with results
+        const results = {
+            liquid_name: "Water (H₂O)",
+            temperature: 1.0,
+            pressure: 1.0,
+            state: "LIQUID",
+            flask_state: "still",
+            description: "LIQUID state! Temperature is between freezing and boiling points"
+        };
+        
+        // Update the webpage if it's open
+        if (window.parent && window.parent.displayResults) {
+            window.parent.displayResults(results);
+        }
+        </script>
+        

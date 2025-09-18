@@ -1,8 +1,0 @@
-# Python libraries needed for this project
-# Install these by running: pip install -r requirements.txt
-
-Flask==2.3.3
-# Flask is a web framework that lets Python talk to websites
-
-flask-cors==4.0.0
-# Flask-CORS allows frontend and backend to communicate
